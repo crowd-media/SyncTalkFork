@@ -64,6 +64,15 @@ RUN /opt/conda/envs/synctalk/bin/pip install -r requirements.txt \
     && /opt/conda/envs/synctalk/bin/pip install ./gridencoder \
     && /opt/conda/envs/synctalk/bin/pip install ./raymarching
 
+# COPY code
+COPY scripts ./scripts
+COPY nerf_triplane ./nerf_triplane
+COPY data_utils ./data_utils
+
+
+COPY ./downloads/face_parsing/79999_iter.pth ./data_utils/face_parsing/79999_iter.pth
+COPY ./downloads/face_tracking/3DMM/*   ./data_utils/face_tracking/3DMM/
+COPY main.py ./main.py
 # Set the default conda environment
 SHELL ["conda", "run", "-n", "synctalk", "/bin/bash", "-c"]
 

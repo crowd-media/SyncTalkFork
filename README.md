@@ -39,6 +39,14 @@ Download link: [Hugging Face](https://huggingface.co/ZiqiaoPeng/SyncTalk/blob/ma
 
 ## For Linux
 
+### Docker installation
+
+```bash
+docker build -t synctalk .
+docker run --gpus all -v ./model:/app/SyncTalk/model -v ./data:/app/SyncTalk/data -it synctalk
+```
+
+
 ### Installation
 
 Tested on Ubuntu 18.04, Pytorch 1.12.1 and CUDA 11.3.
